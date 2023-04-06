@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <qinjiang v-for="item in items" v-bind:qin="item"></qinjiang>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+  //定义一个Vue的component组件——模板
+  Vue.component("qinjiang",{
+    props:['qin'],//传递参数
+    template:'<li>{{qin}}</li>'
+  })
+  var vm = new Vue({
+    el:"#app",
+    data:{
+      items:["java","Linux","前端"]
+  }
+  });
+</script>
+</body>
+</html>
